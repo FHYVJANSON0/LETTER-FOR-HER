@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#f8eee4"
+    >
+
+    <title>Hey Baby! ♡</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=Parisienne&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+    <!-- ======================================
+         DECORATIVE BACKGROUND
+    ======================================= -->
+
+    <div class="paper-noise"></div>
+
+    <div class="floating-decor decor-1">♡</div>
+    <div class="floating-decor decor-2">✦</div>
+    <div class="floating-decor decor-3">♡</div>
+    <div class="floating-decor decor-4">✿</div>
+
+
+    <button
+        id="backButton"
+        class="nav-back"
+        type="button"
+        aria-label="Go back"
+        onclick="goBack()"
+    >
+        ← Back
+    </button>
+
+    <div class="surrounding-pictures hidden" id="surroundingPictures" aria-hidden="true">
+        <img src="Flower.png" alt="Flower decoration" class="surrounding-item item-1">
+        <img src="Flower.png" alt="Flower decoration" class="surrounding-item item-2">
+        <img src="With_her.jpg" alt="Little memory" class="surrounding-item item-3">
+        <img src="Flower.png" alt="Flower decoration" class="surrounding-item item-4">
+        <img src="Flower.png" alt="Flower decoration" class="surrounding-item item-5">
+        <div class="surrounding-text" id="surroundingText">Pleaseee ♡</div>
+    </div>
+
+    <audio
+        id="music"
+        preload="auto"
+        loop
+    >
+        <source
+            src="Rob Deniel - Star Song (Official Lyric Visualizer) [IvnVeQ-so8Q].mp3"
+            type="audio/mpeg"
+        >
+    </audio>
+
+    <!-- ======================================
+         APP
+    ======================================= -->
+
+    <main class="app">
+
+
+        <!-- ==================================
+             PAGE 1
+        =================================== -->
+
+        <section
+            class="page active"
+            id="page1"
+        >
+
+            <div class="sunset-card">
+
+                <div class="sunset-sky">
+
+                    <div class="sun">
+                    </div>
+
+                    <div class="cloud cloud-one">
+                    </div>
+
+                    <div class="cloud cloud-two">
+                    </div>
+
+                    <div class="hill hill-one">
+                    </div>
+
+                    <div class="hill hill-two">
+                    </div>
+
+                </div>
+
+
+                <div class="intro-content">
+
+                    <span class="eyebrow">
+                        A LITTLE SURPRISE
+                    </span>
+
+
+                    <h1>
+                        HEY BABY!
+                    </h1>
+
+
+                    <p>
+                        I made something small,
+                        sweet, and special
+                        just for you.
+                    </p>
+
+
+                    <div class="intro-flower">
+
+                        <img
+                            src="Flower.png"
+                            alt="Flowers"
+                        >
+
+                    </div>
+
+
+                    <p class="question">
+                        Would you like to see your gift?
+                    </p>
+
+
+                    <div class="choice">
+
+                        <button
+                            class="choice-yes"
+                            onclick="showHappyReaction(); setTimeout(() => goToPage(2), 1200)"
+                        >
+                            ✓ YES
+                        </button>
+
+
+                        <button
+                            class="choice-no"
+                            onclick="showNoMessage()"
+                        >
+                            ✕ NO
+                        </button>
+
+                    </div>
+
+
+                    <span
+                        id="no-message"
+                        class="no-message"
+                    >
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================
+             PAGE 2 — PIN
+        =================================== -->
+
+        <section
+            class="page"
+            id="page2"
+        >
+
+            <div class="pin-card">
+
+                <div class="mini-flower">
+                    ✿
+                </div>
+
+
+                <span class="eyebrow">
+                    PRIVATE LITTLE SECRET
+                </span>
+
+
+                <h2>
+                    The Pass
+                </h2>
+
+
+                <p class="pin-description">
+                    Enter the special number
+                    to continue.
+                </p>
+
+
+                <div class="pin-dots">
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </div>
+
+
+                <input
+                    id="passcode"
+                    class="pin-input"
+                    type="password"
+                    inputmode="numeric"
+                    maxlength="6"
+                    placeholder="000000"
+                    autocomplete="off"
+                >
+
+
+                <button
+                    class="main-button"
+                    onclick="checkPasscode()"
+                >
+                    UNLOCK ♡
+                </button>
+
+
+                <p
+                    id="pass-error"
+                    class="error"
+                >
+                </p>
+
+
+                <p class="tiny-hint">
+                    hint · the day you said yes to me
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================
+             PAGE 3 — LOVE NOTE / ENVELOPE
+        =================================== -->
+
+        <section
+            class="page"
+            id="page3"
+        >
+
+            <div class="gift-page">
+
+                <span class="eyebrow">
+                    FOR YOU
+                </span>
+
+
+                <h2>
+                    Your letter<br>
+                    is waiting.
+                </h2>
+
+
+                <p>
+                    Take a little moment
+                    and open it.
+                </p>
+
+
+                <!-- ENVELOPE -->
+
+                <div
+                    class="envelope"
+                    id="envelope"
+                    onclick="openEnvelope()"
+                >
+
+                    <div class="envelope-shadow">
+                    </div>
+
+
+                    <div class="envelope-body">
+                    </div>
+
+
+                    <div class="letter-inside">
+
+                        <span>
+                            Happy
+                        </span>
+
+                        <strong>
+                            Monthsary ♡
+                        </strong>
+
+                    </div>
+
+
+                    <div class="envelope-flap">
+                    </div>
+
+
+                    <div class="envelope-seal">
+                        ♥
+                    </div>
+
+                </div>
+
+
+                <span
+                    class="tap-label"
+                    onclick="openEnvelope()"
+                    role="button"
+                    tabindex="0"
+                    onkeydown="if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); openEnvelope(); }"
+                >
+                    TAP THE LETTER
+                </span>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================
+             PAGE 4 — LETTER
+        =================================== -->
+
+        <section
+            class="page"
+            id="page4"
+        >
+
+            <div class="letter-page">
+
+                <article class="paper-letter">
+
+
+                    <div class="letter-heading">
+
+                        <span>
+                            WITH LOVE
+                        </span>
+
+                        <div>
+                            ♡
+                        </div>
+
+                    </div>
+
+
+                    <h1>
+                        Letter for you my love,
+                        <br>
+                    </h1>
+
+
+                    <div class="line">
+                    </div>
+
+
+                    <div class="letter-text">
+
+                        <p>
+                            Dear love,
+                        </p>
+
+
+                        <p>
+                            I just want to take a moment to tell you how thankful I am to have you in my life. You are one of the people who can easily make my day better. Even a simple conversation with you can make me smile. I appreciate every moment that we spend together. I love how you can make ordinary days feel special. Your presence gives me comfort when I feel tired or stressed. You always remind me that I am not alone. I am grateful for every laugh and memory we have shared. I may not always say it, but you mean a lot to me. Sometimes, I just smile when I think about you.
+                        </p>
+
+
+                        <p>
+                            I like the way you make me feel happy without even trying. You have become someone I truly care about. I admire your personality and the way you treat the people around you. I also appreciate the little things you do. Even the smallest things can mean so much to me. Thank you for listening whenever I have something to say. Thank you for being patient with me. Thank you for understanding me even when I cannot explain everything. I hope you know how special you are to me. I hope you never forget that you are appreciated. There are times when I do not know the right words to say. Still, I hope my actions can show how much I care.
+                        </p>
+
+
+                        <p>
+                            I want to continue making good memories with you. I want to be someone who can also make you happy. I want to support you whenever you need someone beside you. I will always be happy to see you achieve your goals. Your happiness matters to me. Your dreams also matter to me. I hope you continue chasing the things that make you happy. I hope you never give up when things become difficult. Always remember that you are capable of doing great things. I believe that better days are waiting for you. I also hope that we can continue growing together. Life may not always be easy, but I hope we can face its challenges with understanding.
+                        </p>
+
+
+                        <p>
+                            I do not need everything to be perfect. I just want the moments we share to be genuine and meaningful. I treasure the memories we already have. I am also excited about the memories we have yet to make. You have brought happiness into my life in your own special way. I will always be thankful for that. I hope I can also bring happiness into your life. No matter where life takes us, I will always appreciate the time we had together. I hope you always take care of yourself. I hope you remember to rest when you are tired. I hope you know that someone out there truly cares about you. For me, that someone is me. Thank you for being a beautiful part of my life. Thank you for all the smiles, laughter, and memories. I am grateful that our paths crossed. And most of all, I hope we continue creating beautiful memories together.
+                        </p>
+
+
+                        <p>
+                            Happy monthsary, baby.
+                            ♡
+                        </p>
+
+                    </div>
+
+
+                    <div class="signature">
+
+                        <span>
+                            Always,
+                        </span>
+
+                        <strong>
+                            Me ♡
+                        </strong>
+
+                    </div>
+
+
+                    <!-- PHOTO -->
+
+                    <div class="photo-area">
+
+                        <span class="eyebrow">
+                            A LITTLE MEMORY
+                        </span>
+
+
+                        <div class="photo-card">
+
+                            <div class="tape">
+                            </div>
+
+                            <img
+                                src="With_her.jpg"
+                                alt="Our memory"
+                            >
+
+                            <span>
+                                One of my favorite
+                                memories ♡
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- NEXT -->
+
+                    <button
+                        class="text-button"
+                        onclick="goToPage(5)"
+                    >
+                        Continue →
+                    </button>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================
+             PAGE 5 — FLOWERS
+        =================================== -->
+
+        <section
+            class="page"
+            id="page5"
+        >
+
+            <div class="flower-page">
+
+                <span class="eyebrow">
+                    JUST FOR YOU
+                </span>
+
+
+                <h2>
+                    Flowers<br>
+                    For You
+                </h2>
+
+
+                <p>
+                    Since I can't hand you flowers
+                    through a screen...
+                </p>
+
+
+                <div class="flower-display">
+
+                    <div class="flower-circle">
+                    </div>
+
+
+                    <img
+                        src="Flower.png"
+                        alt="A bouquet of flowers"
+                    >
+
+                </div>
+
+
+                <div class="flower-note">
+
+                    <span>
+                        🌷
+                    </span>
+
+                    <p>
+                        Consider these a little reminder
+                        that you are loved, appreciated,
+                        and thought about.
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="main-button"
+                    onclick="goToPage(6)"
+                >
+                    ONE MORE THING ♡
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================
+             PAGE 6 — MUSIC + SECRET
+        =================================== -->
+
+        <section
+            class="page"
+            id="page6"
+        >
+
+            <div class="final-page">
+
+                <span class="eyebrow">
+                    BEFORE YOU GO
+                </span>
+
+
+                <h2>
+                    One last<br>
+                    little thing...
+                </h2>
+
+
+                <!-- SECRET HEART -->
+
+                <button
+                    id="secretHeart"
+                    class="secret-heart"
+                    onclick="revealSecret()"
+                >
+                    ♡
+                </button>
+
+
+                <p class="secret-label">
+                    tap the heart
+                </p>
+
+
+                <div
+                    id="secretMessage"
+                    class="secret-message"
+                >
+
+                    You are one of the sweetest
+                    parts of my story.
+
+                    <br><br>
+
+                    Thank you for being you.
+
+                    <br>
+
+                    <strong>
+                        I love you. ♡
+                    </strong>
+
+                </div>
+
+
+                <!-- MUSIC -->
+
+                <div class="music-card">
+
+                    <div
+                        class="music-disc"
+                        id="musicDisc"
+                    >
+                        ♫
+                    </div>
+
+
+                    <div class="music-details">
+
+                        <strong>
+                            A song for you
+                        </strong>
+
+                        <span>
+                            press play while you read
+                        </span>
+
+                    </div>
+
+
+                    <button
+                        id="musicButton"
+                        class="music-button"
+                        onclick="toggleMusic()"
+                    >
+                        ▶
+                    </button>
+
+                </div>
+
+
+                <p class="final-note">
+                    made with love · just for you ♡
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
